@@ -1,57 +1,61 @@
 ---
-import 'public/assets/globals.css';
-import { Button } from "@/components/ui/button";
-import { Card } from '@/components/ui/card';
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 ---
 
-<Layout>
-	<main>
-	  <section class="hero">
-		<h1>Welcome to Save Room</h1>
-		<p>Your ultimate destination for retro gaming. Explore reviews, guides, and more!</p>
-		<Button variant="ghost">Explore Now</Button>
-	  </section>
+<Layout
+  title="Save Room"
+  description="Your retro Sancuary"
+>
+  <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+    <main>
+      <section class="hero">
+      <h1>Welcome to Save Room</h1>
+      <p>Your ultimate destination for retro gaming. Explore reviews, guides, and more!</p>
+      <Button variant="ghost">Explore Now</Button>
+      </section>
+    
+      <section class="featured-content">
+      <h2>Featured Articles</h2>
+      <div class="cards">
+        <Card>
+        <h3>Top 10 PlayStation Classics</h3>
+        <p>Discover the best PlayStation games of all time.</p>
+        </Card>
+        <Card>
+        <h3>Ultimate Guide to Retro Consoles</h3>
+        <p>Learn everything you need to know about classic gaming consoles.</p>
+        </Card>
+      </div>
+      </section>
   
-	  <section class="featured-content">
-		<h2>Featured Articles</h2>
-		<div class="cards">
-		  <Card>
-			<h3>Top 10 PlayStation Classics</h3>
-			<p>Discover the best PlayStation games of all time.</p>
-		  </Card>
-		  <Card>
-			<h3>Ultimate Guide to Retro Consoles</h3>
-			<p>Learn everything you need to know about classic gaming consoles.</p>
-		  </Card>
-		</div>
-	  </section>
-
-	  <section>
-		<h1>Welcome to Save Room: Your Ultimate Retro Gaming Hub</h1>
-		<p>
-		  Discover the world of retro gaming with Save Room, your go-to platform for everything related to classic video games from the 80s and 90s. Whether you're a nostalgic gamer looking to revisit your childhood favorites, or a new player curious about the golden era of gaming, Save Room offers comprehensive guides, in-depth reviews, and a vibrant community of fellow enthusiasts.
-		</p>
-		
-		<h2>Why Choose Save Room?</h2>
-		<p>
-		  At Save Room, we provide detailed insights into classic consoles like the PlayStation, Dreamcast, and more. Our expert reviews and guides are designed to help you explore the best games, learn about their history, and master gameplay tips. Join us as we delve into the iconic titles that defined a generation and continue to influence the gaming industry today.
-		</p>
-		
-		<h2>Explore Retro Gaming Like Never Before</h2>
-		<p>
-		  From platformers and RPGs to action-adventure and puzzle games, our platform covers a wide range of genres. Explore our curated lists of must-play games, discover hidden gems, and stay updated with the latest news in the retro gaming community. Whether you're here for nostalgia or to expand your gaming horizons, Save Room is your safe haven in the world of classic video games.
-		</p>
-		
-		<h2>Join Our Community</h2>
-		<p>
-		  Connect with other retro gaming fans, share your experiences, and participate in discussions about your favorite games and consoles. Save Room is more than just a website; it's a community where gamers of all ages can come together to celebrate the timeless joy of retro gaming.
-		</p>
-		
-		<p>
-		  Stay tuned for new content every week, including game reviews, guides, and videos. Subscribe to our newsletter and never miss an update!
-		</p>
-	  </section>
-	  
-	</main>
-  </Layout>
+      <section>
+      <h1>Welcome to Save Room: Your Ultimate Retro Gaming Hub</h1>
+      <p>
+        Discover the world of retro gaming with Save Room, your go-to platform for everything related to classic video games from the 80s and 90s. Whether you're a nostalgic gamer looking to revisit your childhood favorites, or a new player curious about the golden era of gaming, Save Room offers comprehensive guides, in-depth reviews, and a vibrant community of fellow enthusiasts.
+      </p>
+      
+      <h2>Why Choose Save Room?</h2>
+      <p>
+        At Save Room, we provide detailed insights into classic consoles like the PlayStation, Dreamcast, and more. Our expert reviews and guides are designed to help you explore the best games, learn about their history, and master gameplay tips. Join us as we delve into the iconic titles that defined a generation and continue to influence the gaming industry today.
+      </p>
+      
+      <h2>Explore Retro Gaming Like Never Before</h2>
+      <p>
+        From platformers and RPGs to action-adventure and puzzle games, our platform covers a wide range of genres. Explore our curated lists of must-play games, discover hidden gems, and stay updated with the latest news in the retro gaming community. Whether you're here for nostalgia or to expand your gaming horizons, Save Room is your safe haven in the world of classic video games.
+      </p>
+      
+      <h2>Join Our Community</h2>
+      <p>
+        Connect with other retro gaming fans, share your experiences, and participate in discussions about your favorite games and consoles. Save Room is more than just a website; it's a community where gamers of all ages can come together to celebrate the timeless joy of retro gaming.
+      </p>
+      
+      <p>
+        Stay tuned for new content every week, including game reviews, guides, and videos. Subscribe to our newsletter and never miss an update!
+      </p>
+      </section>
+      
+    </main>
+  </section>
+</Layout>

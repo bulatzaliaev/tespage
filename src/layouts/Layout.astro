@@ -1,14 +1,30 @@
-<!doctype html>
+---
+import HeadSEO from '@/components/HeadSEO.astro'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+
+interface Props {
+  title?: string | undefined
+  description?: string | undefined
+  ogImage?: URL | undefined
+}
+
+const { title, description, ogImage } = Astro.props
+---
+
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="/path-to-your-global-styles.css" />
+    <HeadSEO title={title} description={description} ogImage={ogImage} />
   </head>
-  <body>
-
-    <slot />
-    
+  <body class="min-h-screen bg-background font-sans antialiased">
+    <main>
+      <div class="relative flex min-h-screen flex-col">
+        <Header />
+        <main class="flex-auto">
+          <slot />
+        </main>
+        <Footer />
+      </div>
+    </main>
   </body>
 </html>
