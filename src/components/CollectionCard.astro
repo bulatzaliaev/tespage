@@ -1,0 +1,8 @@
+---
+import type { Collection } from '../data/collections';
+const { collection } = Astro.props as { collection: Collection };
+---
+<a class={`collection-card ${collection.accent}`} href={`/collections/${collection.slug}`}><span class="collection-number">0{['declutter','room-resets','storage'].indexOf(collection.slug) + 1}</span><span class="eyebrow">{collection.eyebrow}</span><h3>{collection.title}</h3><p>{collection.description}</p><span class="arrow">↗</span></a>
+<style>
+  .collection-card { position: relative; display: block; min-height: 300px; padding: 28px; overflow: hidden; color: var(--ink); border-radius: var(--radius-md); text-decoration: none; transition: transform .2s ease; }.collection-card:hover { transform: translateY(-5px); }.collection-card.clay { background: #e5a486; }.collection-card.sage { background: #c1cfb5; }.collection-card.butter { background: #e6d495; }.collection-card h3 { max-width: 8ch; margin: 30px 0 12px; }.collection-card p { max-width: 28ch; color: rgba(38,48,42,.72); font-size: .9rem; }.collection-number { position: absolute; top: 24px; right: 26px; font-family: var(--serif); font-size: 2rem; }.arrow { position: absolute; right: 25px; bottom: 20px; font-size: 1.5rem; }
+</style>

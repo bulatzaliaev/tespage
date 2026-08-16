@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import VideoGrid from '../../components/VideoGrid.astro';
+import { collections } from '../../data/collections';
+import { videos, channelUrl } from '../../data/videos';
+export function getStaticPaths() { return collections.map((collection) => ({ params: { slug: collection.slug }, props: { collection } })); }
+const { collection } = Astro.props;
+---
+<BaseLayout title={collection.title} description={collection.description}>
+  <section class={`collection-hero ${collection.accent}`}><div class="container"><a class="back-link" href="/collections">← All collections</a><div class="eyebrow">{collection.eyebrow}</div><h1>{collection.title}</h1><p>{collection.description}</p></div></section>
+  <section class="section container"><div class="intro-row"><div><div class="eyebrow">A little inspiration</div><h2>Start where<br /><em>you are.</em></h2></div><p>Real life is allowed here. Browse the latest ideas from Save Room and take one small thing with you.</p></div><VideoGrid videos={videos.filter(() => false)} /><div class="channel-callout"><span>More from this collection is waiting on YouTube.</span><a class="button button--dark" href={`${channelUrl}/videos`} target="_blank" rel="noreferrer">Explore Save Room ↗</a></div></section>
+</BaseLayout>
+<style>.collection-hero{padding:40px 0 90px}.collection-hero.clay{background:#e5a486}.collection-hero.sage{background:#c1cfb5}.collection-hero.butter{background:#e6d495}.back-link{display:inline-block;margin-bottom:80px;color:var(--forest);font-size:.9rem;font-weight:700;text-decoration:none}.collection-hero h1{margin:20px 0 12px;font-size:clamp(4rem,10vw,8rem)}.collection-hero p{max-width:42ch;color:rgba(38,48,42,.7);font-size:1.1rem}.intro-row{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:50px;margin-bottom:40px}.intro-row h2{margin:14px 0}.intro-row h2 em{color:var(--terracotta)}.intro-row>p{max-width:36ch}.channel-callout{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:26px;padding:24px 0;border-top:1px solid var(--line)}.channel-callout span{color:var(--muted)}@media(max-width:680px){.back-link{margin-bottom:50px}.intro-row{grid-template-columns:1fr;gap:10px}.channel-callout{align-items:flex-start;flex-direction:column}}
+</style>

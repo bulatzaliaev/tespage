@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><a class="wordmark" href="/"><span class="wordmark-mark">✳</span><span>save room</span></a><p>More room for the good stuff.</p></div>
+    <div class="footer-links"><a href="/about">About</a><a href="/contact">Work with us</a><a href="https://www.youtube.com/@saveroomorg" target="_blank" rel="noreferrer">YouTube ↗</a></div>
+    <p class="copyright">© {new Date().getFullYear()} Save Room</p>
+  </div>
+</footer>
+<style>
+  .site-footer { padding: 48px 0; color: var(--cream); background: var(--forest); }
+  .footer-grid { display: grid; grid-template-columns: 1fr auto auto; align-items: end; gap: 40px; }
+  .site-footer .wordmark { color: var(--cream); } .site-footer p { margin: 14px 0 0; color: rgba(247,243,236,.64); }
+  .footer-links { display: flex; gap: 20px; } .footer-links a { color: var(--cream); font-size: .9rem; text-decoration: none; }
+  .copyright { font-size: .78rem; } @media (max-width: 680px) { .footer-grid { grid-template-columns: 1fr; gap: 22px; } .copyright { margin: 0 !important; } }
+</style>

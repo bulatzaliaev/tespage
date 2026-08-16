@@ -1,0 +1,16 @@
+---
+interface Props { title: string; description: string; canonical?: string; ogImage?: string; }
+const { title, description, canonical, ogImage = '/og-default.svg' } = Astro.props;
+const siteTitle = title === 'Save Room' ? title : `${title} — Save Room`;
+---
+<title>{siteTitle}</title>
+<meta name="description" content={description} />
+<meta name="theme-color" content="#26483a" />
+{canonical && <link rel="canonical" href={canonical} />}
+<meta property="og:type" content="website" />
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={siteTitle} />
+<meta name="twitter:description" content={description} />

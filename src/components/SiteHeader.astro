@@ -1,0 +1,37 @@
+---
+const links = [{ href: '/watch', label: 'Watch' }, { href: '/collections', label: 'Collections' }, { href: '/about', label: 'About' }];
+const pathname = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="wordmark" href="/" aria-label="Save Room home"><span class="wordmark-mark">✳</span><span>save room</span></a>
+    <nav aria-label="Main navigation">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menu <span>↗</span></button>
+      <div class="nav-links" id="main-menu">
+        {links.map((link) => <a class:list={[{ active: pathname === link.href || pathname.startsWith(`${link.href}/`) }]} href={link.href}>{link.label}</a>)}
+        <a class="nav-cta" href="https://www.youtube.com/@saveroomorg" target="_blank" rel="noreferrer">YouTube <span>↗</span></a>
+      </div>
+    </nav>
+  </div>
+</header>
+<style>
+  .site-header { padding: 23px 0; border-bottom: 1px solid var(--line); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+  .wordmark { display: inline-flex; align-items: center; gap: 9px; color: var(--forest); font-size: 1.05rem; font-weight: 700; letter-spacing: -.04em; text-decoration: none; }
+  .wordmark-mark { display: grid; place-items: center; width: 27px; height: 27px; color: var(--cream); background: var(--terracotta); border-radius: 50%; font-size: 1rem; }
+  .nav-links { display: flex; align-items: center; gap: 27px; }
+  .nav-links a { color: var(--muted); font-size: .9rem; text-decoration: none; }
+  .nav-links a:hover, .nav-links a.active { color: var(--forest); }
+  .nav-links a.active { font-weight: 700; }
+  .nav-cta { padding: 10px 15px; color: var(--forest) !important; border: 1px solid var(--line); border-radius: 99px; }
+  .nav-cta span { color: var(--terracotta); }
+  .menu-toggle { display: none; border: 0; background: none; color: var(--forest); font: inherit; }
+  @media (max-width: 680px) { .menu-toggle { display: block; } .nav-links { display: none; position: absolute; inset: 72px 14px auto; padding: 18px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow); z-index: 5; } nav:has(.menu-toggle[aria-expanded="true"]) .nav-links { display: grid; } .nav-links a { padding: 10px; } }
+</style>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+  });
+</script>
