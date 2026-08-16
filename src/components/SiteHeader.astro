@@ -4,7 +4,7 @@ const pathname = Astro.url.pathname;
 ---
 <header class="site-header">
   <div class="container header-inner">
-    <a class="wordmark" href="/" aria-label="Save Room home"><span class="wordmark-mark">✳</span><span>save room</span></a>
+    <a class="wordmark" href="/" aria-label="Save Room home"><span class="wordmark-mark">SR</span><span>save room</span></a>
     <nav aria-label="Main navigation">
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menu <span>↗</span></button>
       <div class="nav-links" id="main-menu">
@@ -15,17 +15,17 @@ const pathname = Astro.url.pathname;
   </div>
 </header>
 <style>
-  .site-header { padding: 23px 0; border-bottom: 1px solid var(--line); }
+  .site-header { padding: 18px 0; border-bottom: 1px solid var(--line); background: rgba(9,11,26,.76); backdrop-filter: blur(14px); position: sticky; top: 0; z-index: 10; }
   .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-  .wordmark { display: inline-flex; align-items: center; gap: 9px; color: var(--forest); font-size: 1.05rem; font-weight: 700; letter-spacing: -.04em; text-decoration: none; }
-  .wordmark-mark { display: grid; place-items: center; width: 27px; height: 27px; color: var(--cream); background: var(--terracotta); border-radius: 50%; font-size: 1rem; }
+  .wordmark { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-size: 1.05rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+  .wordmark-mark { display: grid; place-items: center; width: 32px; height: 32px; color: var(--forest); background: var(--coral); border-radius: 6px; font-size: .76rem; box-shadow: 0 0 18px rgba(39,245,255,.45); }
   .nav-links { display: flex; align-items: center; gap: 27px; }
-  .nav-links a { color: var(--muted); font-size: .9rem; text-decoration: none; }
-  .nav-links a:hover, .nav-links a.active { color: var(--forest); }
+  .nav-links a { color: var(--muted); font-size: .82rem; font-weight: 800; text-decoration: none; text-transform: uppercase; letter-spacing: .06em; }
+  .nav-links a:hover, .nav-links a.active { color: var(--coral); }
   .nav-links a.active { font-weight: 700; }
-  .nav-cta { padding: 10px 15px; color: var(--forest) !important; border: 1px solid var(--line); border-radius: 99px; }
-  .nav-cta span { color: var(--terracotta); }
-  .menu-toggle { display: none; border: 0; background: none; color: var(--forest); font: inherit; }
+  .nav-cta { padding: 10px 15px; color: var(--forest) !important; background: var(--yellow); border: 1px solid var(--yellow); border-radius: var(--radius-md); }
+  .nav-cta span { color: var(--forest); }
+  .menu-toggle { display: none; border: 0; background: none; color: var(--coral); font: inherit; font-weight: 800; text-transform: uppercase; }
   @media (max-width: 680px) { .menu-toggle { display: block; } .nav-links { display: none; position: absolute; inset: 72px 14px auto; padding: 18px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow); z-index: 5; } nav:has(.menu-toggle[aria-expanded="true"]) .nav-links { display: grid; } .nav-links a { padding: 10px; } }
 </style>
 <script>

@@ -1,6 +1,6 @@
 # Save Room
 
-An Astro 7 brand home for the Save Room YouTube channel.
+An Astro 7 retrowave brand home for the Save Room YouTube channel.
 
 ## Commands
 
@@ -16,4 +16,4 @@ The project uses Node 22.12.0 or newer, declared in `.nvmrc` and `package.json`.
 
 ## Content
 
-The editorial collections live in `src/data/collections.ts`. Verified YouTube video metadata belongs in `src/data/videos.ts`; the current environment could not expose individual video metadata from the channel page, so the site safely links visitors to the official channel until those entries can be verified.
+The editorial collections live in `src/data/collections.ts`. Verified YouTube video metadata from the public `@saveroomorg` feed lives in `src/data/videos.ts`, using channel ID `UCg0WNfzVoBBLV5c6Rv3BJeA`.

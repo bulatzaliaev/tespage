@@ -4,5 +4,6 @@
     "strictNullChecks": true,
     "allowJs": true,
     "checkJs": true
-  }
+  },
+  "exclude": ["tests"]
 }

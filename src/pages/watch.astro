@@ -4,15 +4,15 @@ import VideoGrid from '../components/VideoGrid.astro';
 import { videos } from '../data/videos';
 const categories = [...new Set(videos.map((video) => video.category))];
 ---
-<BaseLayout title="Watch" description="Browse Save Room videos for organizing, resets, and everyday calm.">
-  <section class="page-intro container"><div class="eyebrow">The library</div><h1>Watch, reset,<br /><em>repeat.</em></h1><p>Take what you need. Leave what you don’t.</p></section>
+<BaseLayout title="Watch" description="Browse Save Room videos about retro games, classic PC nostalgia, and hardware tuning.">
+  <section class="page-intro container"><div class="eyebrow">Video library</div><h1>Watch, boot,<br /><em>repeat.</em></h1><p>Deep dives, shorts, shelf checks, and workbench guides from Save Room.</p></section>
   <section class="section section--tight container">
     <div class="filter-bar" aria-label="Video filters"><span class="filter-label">Filter by</span><button class="filter active" data-filter="all" aria-pressed="true">Everything</button>{categories.map((category) => <button class="filter" data-filter={category} aria-pressed="false">{category}</button>)}</div>
     <div id="video-results"><VideoGrid videos={videos} /></div>
     <noscript><p class="noscript-note">JavaScript is not required to browse the Save Room channel.</p></noscript>
   </section>
 </BaseLayout>
-<style>.page-intro{padding-top:80px;padding-bottom:35px}.page-intro h1{margin:20px 0}.page-intro h1 em{color:var(--terracotta)}.page-intro p{font-size:1.1rem}.filter-bar{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:30px}.filter-label{margin-right:7px;color:var(--muted);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}.filter{padding:9px 15px;color:var(--forest);background:transparent;border:1px solid var(--line);border-radius:99px;font:inherit;font-size:.85rem;cursor:pointer}.filter.active,.filter:hover{color:var(--cream);background:var(--forest);border-color:var(--forest)}.noscript-note{margin-top:22px;color:var(--muted);font-size:.85rem}</style>
+<style>.page-intro{padding-top:80px;padding-bottom:35px}.page-intro h1{margin:20px 0}.page-intro h1 em{color:var(--terracotta);font-style:normal}.page-intro p{font-size:1.1rem}.filter-bar{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:30px}.filter-label{margin-right:7px;color:var(--muted);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.filter{padding:9px 15px;color:var(--coral);background:rgba(20,26,58,.72);border:1px solid var(--line);border-radius:var(--radius-md);font:inherit;font-size:.85rem;font-weight:800;cursor:pointer}.filter.active,.filter:hover{color:var(--forest);background:var(--coral);border-color:var(--coral)}.noscript-note{margin-top:22px;color:var(--muted);font-size:.85rem}</style>
 <script>
   const buttons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
   const cards = document.querySelectorAll<HTMLElement>('[data-category]');

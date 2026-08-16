@@ -4,8 +4,8 @@ import SectionHeading from '../../components/SectionHeading.astro';
 import CollectionCard from '../../components/CollectionCard.astro';
 import { collections } from '../../data/collections';
 ---
-<BaseLayout title="Collections" description="Save Room collections for decluttering, room resets, and storage with intention.">
-  <section class="page-intro container"><div class="eyebrow">Curated for you</div><h1>Good places<br /><em>to begin.</em></h1><p>Thoughtful starting points for a home that feels more like yours.</p></section>
-  <section class="section section--tight container"><SectionHeading title="Choose your own adventure." description="There is no one right way to make space. Start with the thing that feels most useful today." /><div class="collection-list">{collections.map((collection) => <CollectionCard collection={collection} />)}</div></section>
+<BaseLayout title="Collections" description="Save Room collections for classic RPGs, retro hardware, and practical PC tuning.">
+  <section class="page-intro container"><div class="eyebrow">Save slots</div><h1>Pick your<br /><em>loadout.</em></h1><p>Start with classic worlds, the hardware shelf, or the PC tuning bench.</p></section>
+  <section class="section section--tight container"><SectionHeading title="Choose your own adventure." description="Every lane points back to the same thing: games and machines worth remembering." /><div class="collection-list">{collections.map((collection) => <CollectionCard collection={collection} />)}</div></section>
 </BaseLayout>
-<style>.page-intro{padding-top:80px;padding-bottom:35px}.page-intro h1{margin:20px 0}.page-intro h1 em{color:var(--terracotta)}.page-intro p{font-size:1.1rem}.collection-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}@media(max-width:800px){.collection-list{grid-template-columns:1fr 1fr}}@media(max-width:520px){.collection-list{grid-template-columns:1fr}}</style>
+<style>.page-intro{padding-top:80px;padding-bottom:35px}.page-intro h1{margin:20px 0}.page-intro h1 em{color:var(--terracotta);font-style:normal}.page-intro p{font-size:1.1rem}.collection-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}@media(max-width:800px){.collection-list{grid-template-columns:1fr 1fr}}@media(max-width:520px){.collection-list{grid-template-columns:1fr}}</style>
