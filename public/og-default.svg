@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#f7f3ec"/><circle cx="1020" cy="100" r="220" fill="#e5a486"/><circle cx="180" cy="560" r="260" fill="#c1cfb5"/><text x="90" y="270" fill="#26483a" font-family="Georgia" font-size="120">save room</text><text x="100" y="350" fill="#68716a" font-family="Arial" font-size="30">More room for the good stuff.</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090b1a" />
+      <stop offset="1" stop-color="#141a3a" />
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#27f5ff" stroke-opacity=".16" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)" />
+  <circle cx="1020" cy="90" r="230" fill="#ff4fd8" fill-opacity=".45" />
+  <circle cx="1020" cy="90" r="150" fill="#ffe66d" fill-opacity=".72" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  <path d="M0 520H1200" stroke="#27f5ff" stroke-opacity=".75" stroke-width="3" />
+  <text x="86" y="150" fill="#27f5ff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="8">SAVE ROOM</text>
+  <text x="80" y="285" fill="#f8f7ff" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800" letter-spacing="2">RETRO</text>
+  <text x="80" y="380" fill="#ff4fd8" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800" letter-spacing="2">GAMING</text>
+  <text x="86" y="470" fill="#aeb8db" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="5">CLASSIC PC HARDWARE · HANDHELDS · DEEP DIVES</text>
+</svg>

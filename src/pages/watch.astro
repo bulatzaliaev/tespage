@@ -4,7 +4,7 @@ import VideoGrid from '../components/VideoGrid.astro';
 import { videos } from '../data/videos';
 const categories = [...new Set(videos.map((video) => video.category))];
 ---
-<BaseLayout title="Watch" description="Browse Save Room videos about retro games, classic PC nostalgia, and hardware tuning.">
+<BaseLayout title="Watch" description="Watch Save Room videos about classic RPGs, strategy games, retro hardware, and PC tuning." breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Watch', path: '/watch' }]}>
   <section class="page-intro container"><div class="eyebrow">Video library</div><h1>Watch, boot,<br /><em>repeat.</em></h1><p>Deep dives, shorts, shelf checks, and workbench guides from Save Room.</p></section>
   <section class="section section--tight container">
     <div class="filter-bar" aria-label="Video filters"><span class="filter-label">Filter by</span><button class="filter active" data-filter="all" aria-pressed="true">Everything</button>{categories.map((category) => <button class="filter" data-filter={category} aria-pressed="false">{category}</button>)}</div>

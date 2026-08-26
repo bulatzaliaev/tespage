@@ -4,7 +4,7 @@ import SectionHeading from '../../components/SectionHeading.astro';
 import CollectionCard from '../../components/CollectionCard.astro';
 import { collections } from '../../data/collections';
 ---
-<BaseLayout title="Collections" description="Save Room collections for classic RPGs, retro hardware, and practical PC tuning.">
+<BaseLayout title="Collections" description="Explore Save Room collections covering classic RPGs, retro hardware, and practical PC workbench guides." breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Collections', path: '/collections' }]}>
   <section class="page-intro container"><div class="eyebrow">Save slots</div><h1>Pick your<br /><em>loadout.</em></h1><p>Start with classic worlds, the hardware shelf, or the PC tuning bench.</p></section>
   <section class="section section--tight container"><SectionHeading title="Choose your own adventure." description="Every lane points back to the same thing: games and machines worth remembering." /><div class="collection-list">{collections.map((collection) => <CollectionCard collection={collection} />)}</div></section>
 </BaseLayout>

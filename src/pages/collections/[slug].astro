@@ -6,7 +6,7 @@ import { videos, channelUrl } from '../../data/videos';
 export function getStaticPaths() { return collections.map((collection) => ({ params: { slug: collection.slug }, props: { collection } })); }
 const { collection } = Astro.props;
 ---
-<BaseLayout title={collection.title} description={collection.description}>
+<BaseLayout title={collection.title} description={collection.description} breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Collections', path: '/collections' }, { name: collection.title, path: `/collections/${collection.slug}` }]}>
   <section class={`collection-hero ${collection.accent}`}><div class="container"><a class="back-link" href="/collections">← All collections</a><div class="eyebrow">{collection.eyebrow}</div><h1>{collection.title}</h1><p>{collection.description}</p></div></section>
   <section class="section container"><div class="intro-row"><div><div class="eyebrow">Queued videos</div><h2>Load this<br /><em>playlist.</em></h2></div><p>Browse the Save Room videos that match this lane, then jump to YouTube for the full channel archive.</p></div><VideoGrid videos={videos.filter((video) => video.category === collection.title || (collection.slug === 'classic-rpgs' && video.category === 'Strategy Classics'))} /><div class="channel-callout"><span>More saves are waiting on YouTube.</span><a class="button button--dark" href={`${channelUrl}/videos`} target="_blank" rel="noreferrer">Explore Save Room ↗</a></div></section>
 </BaseLayout>

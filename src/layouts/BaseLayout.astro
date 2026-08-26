@@ -3,8 +3,23 @@ import Seo from '../components/Seo.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/global.css';
-interface Props { title?: string; description?: string; canonical?: string; }
-const { title = 'Save Room', description = 'Retro gaming, classic PC hardware, and nostalgic deep dives from Save Room.', canonical } = Astro.props;
+import type { Breadcrumb } from '../components/Seo.astro';
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string | null;
+  ogImage?: string;
+  noindex?: boolean;
+  breadcrumbs?: Breadcrumb[];
+}
+const {
+  title = 'Save Room',
+  description = 'Retro gaming, classic PC hardware, and nostalgic deep dives from Save Room.',
+  canonical,
+  ogImage,
+  noindex = false,
+  breadcrumbs,
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -12,7 +27,7 @@ const { title = 'Save Room', description = 'Retro gaming, classic PC hardware, a
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" />
-    <Seo title={title} description={description} canonical={canonical} />
+    <Seo title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} breadcrumbs={breadcrumbs} />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
